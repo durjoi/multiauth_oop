@@ -33,6 +33,7 @@ require_once 'core/init.php';
             'password' => Hash::make(Input::get('password'))
           ));
 
+          Session::flash('home', 'You registered successfully!');
           Redirect::to('index.php');
         } catch(Exception $e) {
           die($e->getMessage());
